@@ -9,6 +9,16 @@ h1, h2 {
     color: #333;
     margin-bottom: 20px;
 }
+img {
+    border: 1px solid #ccc;
+}
+a {
+    text-decoration: none;
+    color: #1a5276;
+}
+a:hover {
+    text-decoration: underline;
+}
 .form-inline label {
     margin-right: 10px;
 }
