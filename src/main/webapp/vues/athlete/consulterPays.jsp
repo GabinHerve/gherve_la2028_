@@ -43,9 +43,9 @@
               for (Athlete a : lesAthletesPays) {
       %>
       <tr>
-          <td><%= a.getNom() %></td>
-          <td><%= a.getPrenom() %></td>
-          <td><%= a.getSport().getLibelle() %></td>
+          <td><a href="../ServletAthlete/consulter?idAthlete=<%= a.getId() %>"><%= a.getNom() %></a></td>
+          <td><a href="../ServletAthlete/consulter?idAthlete=<%= a.getId() %>"><%= a.getPrenom() %></a></td>
+          <td><a href="../ServletSport/consulter?idSport=<%= a.getSport().getId() %>"><%= a.getSport().getLibelle() %></a></td>
       </tr>
       <%
           }

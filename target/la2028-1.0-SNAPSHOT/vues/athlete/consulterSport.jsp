@@ -42,9 +42,9 @@
             for (Athlete a : lesAthletesSports) {
     %>
     <tr>
-        <td><%= a.getNom() %></td>
-        <td><%= a.getPrenom() %></td>
-        <td><%= a.getPays().getNom() %></td>
+        <td><a href="../ServletAthlete/consulter?idAthlete=<%= a.getId() %>"><%= a.getNom() %></a></td>
+        <td><a href="../ServletAthlete/consulter?idAthlete=<%= a.getId() %>"><%= a.getPrenom() %></a></td>
+        <td><a href="../ServletPays/consulter?idPays=<%= a.getPays().getId() %>"><%= a.getPays().getNom() %></a></td>
     </tr>
     <%
         }
