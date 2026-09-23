@@ -22,6 +22,7 @@
                 ArrayList<Athlete> lesAthletesSports = (ArrayList<Athlete>) request.getAttribute("lesAthletesSport");
         %>
 <h1><%  out.println(s.getLibelle()); %></h1>
+<img src="${pageContext.request.contextPath}/vues/img/sport<%= s.getId() %>.jpg" alt="Photo du sport : <%= s.getLibelle() %>" width="200">
 
 
 <table>
