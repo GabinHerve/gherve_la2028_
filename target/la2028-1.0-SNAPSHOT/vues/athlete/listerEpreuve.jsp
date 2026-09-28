@@ -52,13 +52,13 @@
             out.println(e.getId());
             out.println("</td>");
 
-            out.println("<td>");
+            out.println("<td><a href ='../ServletEpreuve/consulter?idEpreuve="+ e.getId()+ "'>");
             out.println(e.getLibelle());
-            out.println("</td>");;
+            out.println("</a></td>");
 
-            out.println("<td>");
+            out.println("<td><a href ='../ServletSport/consulter?idSport="+ e.getSport().getId()+ "'>");
             out.println(e.getSport().getLibelle());
-            out.println("</td>");
+            out.println("</a></td>");
 
           }
         %>

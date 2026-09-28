@@ -61,18 +61,18 @@
                                 out.println("<td><a href ='../ServletAthlete/consulter?idAthlete="+ a.getId()+ "'>");
                                 out.println(a.getPrenom());
                                 out.println("</a></td>");;
-                           
-                                out.println("<td>");
+
+                                out.println("<td><a href ='../ServletPays/consulter?idPays="+ a.getPays().getId()+ "'>");
                                 out.println(a.getPays().getNom());
-                                out.println("</td>");
+                                out.println("</a></td>");
 
                                 out.println("<td><a href ='../ServletAthlete/consulter?idAthlete="+ a.getId()+ "'>");
                                 out.println(a.getDate());
                                 out.println("</a></td>");;
 
-                                out.println("<td>");
+                                out.println("<td><a href ='../ServletSport/consulter?idSport="+ a.getSport().getId()+ "'>");
                                 out.println(a.getSport().getLibelle());
-                                out.println("</td>");
+                                out.println("</a></td>");
                                
                             }
                         %>

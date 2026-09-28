@@ -22,6 +22,7 @@
                 ArrayList<Athlete> lesAthletesSports = (ArrayList<Athlete>) request.getAttribute("lesAthletesSport");
         %>
 <h1><%  out.println(s.getLibelle()); %></h1>
+<img src="${pageContext.request.contextPath}/vues/img/sport<%= s.getId() %>.jpg" alt="Photo du sport : <%= s.getLibelle() %>" width="200">
 
 
 <table>
@@ -42,9 +43,9 @@
             for (Athlete a : lesAthletesSports) {
     %>
     <tr>
-        <td><%= a.getNom() %></td>
-        <td><%= a.getPrenom() %></td>
-        <td><%= a.getPays().getNom() %></td>
+        <td><a href="../ServletAthlete/consulter?idAthlete=<%= a.getId() %>"><%= a.getNom() %></a></td>
+        <td><a href="../ServletAthlete/consulter?idAthlete=<%= a.getId() %>"><%= a.getPrenom() %></a></td>
+        <td><a href="../ServletPays/consulter?idPays=<%= a.getPays().getId() %>"><%= a.getPays().getNom() %></a></td>
     </tr>
     <%
         }

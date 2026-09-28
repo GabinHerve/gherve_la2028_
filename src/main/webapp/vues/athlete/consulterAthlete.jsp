@@ -29,10 +29,10 @@
                 <td>Date de naissance: </td><td><%  out.println(a.getDate());%></td>
             </tr>
             <tr>
-                <td>Pays : </td><td><%  out.println(a.getPays().getNom());%></td>
+                <td>Pays : </td><td><a href="../ServletPays/consulter?idPays=<%= a.getPays().getId() %>"><%= a.getPays().getNom() %></a></td>
             </tr>
             <tr>
-                <td>Sport : </td><td><%  out.println(a.getSport().getLibelle());%></td>
+                <td>Sport : </td><td><a href="../ServletSport/consulter?idSport=<%= a.getSport().getId() %>"><%= a.getSport().getLibelle() %></a></td>
             </tr>
         </table>
 </html>
