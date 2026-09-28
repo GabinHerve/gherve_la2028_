@@ -20,7 +20,7 @@
 %>
 <h1><%= s.getNom() %></h1>
 
-<img src="${pageContext.request.contextPath}/vues/img/site<%= s.getId() %>.jpg" alt="Photo du site : <%= s.getNom() %>" width="200">
+<img src="${pageContext.request.contextPath}/vues/img/site<%= s.getId() %>.jpg" alt="Photo du site : <%= s.getNom() %>" width="500">
 
 <table>
   <tr>
