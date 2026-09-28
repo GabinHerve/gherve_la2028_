@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3307
--- Généré le : lun. 21 sep. 2026 à 09:55
+-- Généré le : lun. 28 sep. 2026 à 11:40
 -- Version du serveur : 11.4.9-MariaDB
 -- Version de PHP : 8.3.28
 
@@ -127,6 +127,37 @@ INSERT INTO `pays` (`id`, `nom`) VALUES
 (22, 'Serbie'),
 (23, 'Suède'),
 (24, 'Pays-Bas');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `site`
+--
+
+DROP TABLE IF EXISTS `site`;
+CREATE TABLE IF NOT EXISTS `site` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nom` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Déchargement des données de la table `site`
+--
+
+INSERT INTO `site` (`id`, `nom`) VALUES
+(1, 'DTLA Zone'),
+(2, 'Exposition Park Zone'),
+(3, 'Griffith Park Zone'),
+(4, 'Riviera Zone'),
+(5, 'Universal City Zone'),
+(6, 'Venice Zone'),
+(7, 'Inglewood Zone'),
+(8, 'Pasadena Zone'),
+(9, 'Anaheim Zone'),
+(10, 'Pomona Zone'),
+(11, 'Trestles Beach Zone'),
+(12, 'OKC Zone');
 
 -- --------------------------------------------------------
 
