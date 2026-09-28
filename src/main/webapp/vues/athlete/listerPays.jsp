@@ -24,6 +24,7 @@
       <a  href ='../ServletPays/listerPays' class="navbar-brand" href=".">Système de gestion des pays</a>
       <a  href ='../ServletSport/listerSport' class="navbar-brand" href=".">Système de gestion des sports</a>
       <a  href ='../ServletEpreuve/listerEpreuve' class="navbar-brand" href=".">Système de gestion des épreuves</a>
+      <a href='../ServletSite/listerSite' class="navbar-brand">Système de gestion des sites</a>
     </div>
   </div>
 </nav>
