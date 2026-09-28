@@ -37,8 +37,8 @@
     </div>
 
     <div class="form-group">
-        <label for="dateNaissance">Date de naissance :</label>
-        <input id="dateNaissance" type="date" name="dateNaissance">
+        <label for="date">Date de naissance :</label>
+        <input id="date" type="date" name="date">
     </div>
 
     <%-- Champ Liste des pays --%>
