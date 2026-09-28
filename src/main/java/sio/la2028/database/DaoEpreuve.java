@@ -55,11 +55,10 @@ public class DaoEpreuve {
         Epreuve e = new Epreuve();
         try{
             requeteSql = cnx.prepareStatement("select e.id as e_id, e.libelle as e_libelle, s.id as s_id, s.libelle as s_libelle" +
-                    " from epreuve a inner join sport s " +
+                    " from epreuve e inner join sport s " +
                     " on e.sport_id = s.id " +
                     " where e.id = ? "
             );
-            //System.out.println("REQ="+ requeteSql);
             requeteSql.setInt(1, idEpreuve);
             resultatRequete = requeteSql.executeQuery();
 
@@ -79,7 +78,7 @@ public class DaoEpreuve {
         }
         catch (SQLException ex){
             ex.printStackTrace();
-            System.out.println("La requête de getLesPompiers e généré une erreur");
+            System.out.println("La requête de getEpreuveById a généré une erreur");
         }
         return e;
     }
