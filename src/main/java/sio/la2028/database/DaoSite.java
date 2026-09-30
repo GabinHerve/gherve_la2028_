@@ -64,4 +64,31 @@ public class DaoSite {
         return s;
     }
 
+    public static Site addSite(Connection cnx, Site site){
+        int idGenere = -1;
+        try
+        {
+            requeteSql = cnx.prepareStatement("INSERT INTO site (nom) VALUES (?)",
+                    PreparedStatement.RETURN_GENERATED_KEYS);
+            requeteSql.setString(1, site.getNom());
+
+            requeteSql.executeUpdate();
+
+            resultatRequete = requeteSql.getGeneratedKeys();
+            while ( resultatRequete.next() ) {
+                idGenere = resultatRequete.getInt( 1 );
+                site.setId(idGenere);
+
+                site = DaoSite.getSiteById(cnx, site.getId());
+            }
+
+        }
+        catch (SQLException e)
+        {
+            e.printStackTrace();
+            System.out.println("La requête d'ajout de site a généré une erreur");
+        }
+        return site;
+    }
+
 }

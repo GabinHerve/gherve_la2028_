@@ -57,5 +57,6 @@
     </table>
   </div>
 </div>
+<a href ='../ServletSite/ajouter'>Ajouter un site</a>
 </body>
 </html>
