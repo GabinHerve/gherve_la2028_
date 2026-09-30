@@ -7,6 +7,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import sio.la2028.database.DaoSite;
 import sio.la2028.model.Site;
+import sio.la2028.form.FormSite;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -43,6 +44,34 @@ public class ServletSite extends HttpServlet {
             request.setAttribute("pSite", s);
             getServletContext().getRequestDispatcher("/vues/athlete/consulterSite.jsp").forward(request, response);
         }
+
+        if(url.equals(request.getContextPath() + "/ServletSite/ajouter"))
+        {
+            getServletContext().getRequestDispatcher("/vues/athlete/ajouterSite.jsp").forward(request, response);
+        }
     }
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+
+        FormSite form = new FormSite();
+
+        Site site = form.ajouterSite(request);
+
+        request.setAttribute( "form", form );
+        request.setAttribute( "pSite", site );
+
+        if (form.getErreurs().isEmpty()){
+            Site siteInsere = DaoSite.addSite(cnx, site);
+            request.setAttribute( "pSite", siteInsere );
+            this.getServletContext().getRequestDispatcher("/vues/athlete/consulterSite.jsp" ).forward( request, response );
+        }
+        else
+        {
+            this.getServletContext().getRequestDispatcher("/vues/athlete/ajouterSite.jsp" ).forward( request, response );
+        }
+
+    }
+
 
 }
