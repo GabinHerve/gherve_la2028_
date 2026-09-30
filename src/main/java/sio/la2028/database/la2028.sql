@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3307
--- Généré le : lun. 28 sep. 2026 à 11:40
+-- Généré le : mer. 30 sep. 2026 à 08:01
 -- Version du serveur : 11.4.9-MariaDB
 -- Version de PHP : 8.3.28
 
@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS `athlete` (
   PRIMARY KEY (`id`),
   KEY `fk_ath_pays` (`pays_id`),
   KEY `fk_ath_sport` (`sport_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Déchargement des données de la table `athlete`
@@ -53,7 +53,8 @@ INSERT INTO `athlete` (`id`, `nom`, `prenom`, `pays_id`, `date`, `sport_id`) VAL
 (6, 'Ledecky', 'Katie', 2, '1997-03-17', 6),
 (7, 'Duplantis', 'Armand', 23, '1999-11-10', 7),
 (8, 'Hassan', 'Sifan', 24, '1993-01-01', 7),
-(9, 'Djokovic', 'Novak', 22, '1987-05-22', 16);
+(9, 'Djokovic', 'Novak', 22, '1987-05-22', 16),
+(10, 'Alfred', 'Julien', 25, '2001-06-10', 7);
 
 -- --------------------------------------------------------
 
@@ -126,7 +127,8 @@ INSERT INTO `pays` (`id`, `nom`) VALUES
 (21, 'Roumanie'),
 (22, 'Serbie'),
 (23, 'Suède'),
-(24, 'Pays-Bas');
+(24, 'Pays-Bas'),
+(25, 'Sainte-Lucie');
 
 -- --------------------------------------------------------
 
@@ -170,7 +172,7 @@ CREATE TABLE IF NOT EXISTS `sport` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `libelle` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `sport`

@@ -78,11 +78,9 @@
                             }
                         %>
                     </tr>
-                    <a href ='../ServletAthlete/ajouter'>Ajouter un athlète</a>
                 </tbody>
             </table>
+            <a href ='../ServletAthlete/ajouter'>Ajouter un athlète</a>
         </body>
-         </div>
-       </div>
   
 </html>

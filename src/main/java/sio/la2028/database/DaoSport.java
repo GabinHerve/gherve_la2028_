@@ -110,4 +110,31 @@ public class DaoSport {
         return lesAthletes;
     }
 
+    public static Sport addSport(Connection cnx, Sport sport){
+        int idGenere = -1;
+        try
+        {
+            requeteSql = cnx.prepareStatement("INSERT INTO sport (libelle) VALUES (?)",
+                    PreparedStatement.RETURN_GENERATED_KEYS);
+            requeteSql.setString(1, sport.getLibelle());
+
+            requeteSql.executeUpdate();
+
+            resultatRequete = requeteSql.getGeneratedKeys();
+            while ( resultatRequete.next() ) {
+                idGenere = resultatRequete.getInt( 1 );
+                sport.setId(idGenere);
+
+                sport = DaoSport.getSportById(cnx, sport.getId());
+            }
+
+        }
+        catch (SQLException e)
+        {
+            e.printStackTrace();
+            System.out.println("La requête d'ajout de sport a généré une erreur");
+        }
+        return sport;
+    }
+
 }

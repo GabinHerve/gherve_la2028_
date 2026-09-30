@@ -10,6 +10,7 @@ import sio.la2028.database.DaoSport;
 import sio.la2028.model.Athlete;
 import sio.la2028.model.Pays;
 import sio.la2028.model.Sport;
+import sio.la2028.form.FormSport;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -104,6 +105,38 @@ public class ServletSport extends HttpServlet {
             request.setAttribute("lesAthletesSport", lesAthletes);
 
             getServletContext().getRequestDispatcher("/vues/athlete/consulterSport.jsp").forward(request, response);
+        }
+
+        if(url.equals("/la2028/ServletSport/ajouter"))
+        {
+            getServletContext().getRequestDispatcher("/vues/athlete/ajouterSport.jsp").forward(request, response);
+        }
+
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+
+        FormSport form = new FormSport();
+
+        Sport sport = form.ajouterSport(request);
+
+        request.setAttribute( "form", form );
+        request.setAttribute( "pSport", sport );
+
+        if (form.getErreurs().isEmpty()){
+            Sport sportInsere = DaoSport.addSport(cnx, sport);
+            request.setAttribute( "pSport", sportInsere );
+
+            ArrayList<Athlete> lesAthletes = DaoSport.getLesAthletesBySport(cnx, sportInsere.getId());
+            request.setAttribute("lesAthletesSport", lesAthletes);
+
+            this.getServletContext().getRequestDispatcher("/vues/athlete/consulterSport.jsp" ).forward( request, response );
+        }
+        else
+        {
+            this.getServletContext().getRequestDispatcher("/vues/athlete/ajouterSport.jsp" ).forward( request, response );
         }
 
     }
