@@ -66,8 +66,7 @@
       </tr>
       </tbody>
     </table>
+    <a href ='../ServletEpreuve/ajouter'>Ajouter une épreuve</a>
 </body>
-</div>
-</div>
 
 </html>

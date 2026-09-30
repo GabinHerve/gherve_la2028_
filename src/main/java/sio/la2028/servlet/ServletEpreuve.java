@@ -11,6 +11,7 @@ import sio.la2028.database.DaoSport;
 import sio.la2028.model.Epreuve;
 import sio.la2028.model.Pays;
 import sio.la2028.model.Sport;
+import sio.la2028.form.FormEpreuve;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -99,6 +100,31 @@ public class ServletEpreuve extends HttpServlet {
         }
 
         if(url.equals("/la2028/ServletEpreuve/ajouter"))
+        {
+            ArrayList<Sport> lesSports = DaoSport.getLesSports(cnx);
+            request.setAttribute("pLesSports", lesSports);
+            this.getServletContext().getRequestDispatcher("/vues/athlete/ajouterEpreuve.jsp" ).forward( request, response );
+        }
+
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+
+        FormEpreuve form = new FormEpreuve();
+
+        Epreuve epreuve = form.ajouterEpreuve(request);
+
+        request.setAttribute( "form", form );
+        request.setAttribute( "pEpreuve", epreuve );
+
+        if (form.getErreurs().isEmpty()){
+            Epreuve epreuveInseree = DaoEpreuve.addEpreuve(cnx, epreuve);
+            request.setAttribute( "pEpreuve", epreuveInseree );
+            this.getServletContext().getRequestDispatcher("/vues/athlete/consulterEpreuve.jsp" ).forward( request, response );
+        }
+        else
         {
             ArrayList<Sport> lesSports = DaoSport.getLesSports(cnx);
             request.setAttribute("pLesSports", lesSports);

@@ -48,6 +48,10 @@
         <servlet-name>ServletEpreuve</servlet-name>
         <url-pattern>/ServletEpreuve/consulter</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletEpreuve</servlet-name>
+        <url-pattern>/ServletEpreuve/ajouter</url-pattern>
+    </servlet-mapping>
 
     <servlet>
         <servlet-name>ServletSport</servlet-name>
