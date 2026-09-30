@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3307
--- Généré le : mer. 30 sep. 2026 à 08:01
+-- Généré le : mer. 30 sep. 2026 à 09:32
 -- Version du serveur : 11.4.9-MariaDB
 -- Version de PHP : 8.3.28
 
@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS `athlete` (
   PRIMARY KEY (`id`),
   KEY `fk_ath_pays` (`pays_id`),
   KEY `fk_ath_sport` (`sport_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Déchargement des données de la table `athlete`
@@ -54,7 +54,24 @@ INSERT INTO `athlete` (`id`, `nom`, `prenom`, `pays_id`, `date`, `sport_id`) VAL
 (7, 'Duplantis', 'Armand', 23, '1999-11-10', 7),
 (8, 'Hassan', 'Sifan', 24, '1993-01-01', 7),
 (9, 'Djokovic', 'Novak', 22, '1987-05-22', 16),
-(10, 'Alfred', 'Julien', 25, '2001-06-10', 7);
+(10, 'Alfred', 'Julien', 25, '2001-06-10', 7),
+(11, 'Beaugrand', 'Cassandre', 1, '1996-09-03', 8),
+(12, 'Oumiha', 'Sofiane', 1, '1994-12-23', 3),
+(13, 'Laurin', 'Althéa', 1, '2001-11-01', 5),
+(14, 'Daudet', 'Joris', 1, '1991-02-12', 10),
+(15, 'Gestin', 'Nicolas', 1, '2000-03-30', 12),
+(16, 'Apithy-Brunet', 'Manon', 1, '1996-02-07', 20),
+(17, 'Jedrzejewski', 'Camille', 1, '2002-04-25', 21),
+(18, 'Vaast', 'Kauli', 1, '2002-02-26', 14),
+(19, 'Mawem', 'Bassa', 1, '1984-11-09', 22),
+(20, 'Lebrun', 'Félix', 1, '2006-09-12', 17),
+(21, 'Lebrun', 'Alexis', 1, '2003-08-27', 17),
+(22, 'Larroque', 'Koumba', 1, '1998-08-22', 4),
+(23, 'Delestre', 'Simon', 1, '1981-06-21', 11),
+(24, 'Nolot', 'Lauriane', 1, '1998-12-09', 13),
+(25, 'Hym', 'Charlotte', 1, '1992-10-30', 15),
+(26, 'Lanier', 'Alex', 1, '2005-01-26', 18),
+(27, 'Boutier', 'Céline', 1, '1993-11-10', 19);
 
 -- --------------------------------------------------------
 
@@ -69,7 +86,7 @@ CREATE TABLE IF NOT EXISTS `epreuve` (
   `sport_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_ath_sport_id` (`sport_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `epreuve`
@@ -141,7 +158,7 @@ CREATE TABLE IF NOT EXISTS `site` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nom` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `site`
