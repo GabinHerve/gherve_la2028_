@@ -27,7 +27,7 @@
 <form class="form-card" action="ajouter" method="POST">
 
     <div class="form-group">
-        <label for="nom">NOM :</label>
+        <label for="nom">Nom :</label>
         <input id="nom" type="text" name="nom" maxlength="30">
     </div>
 
