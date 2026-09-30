@@ -121,12 +121,12 @@ public class DaoAthlete {
             // la paramètre RETURN_GENERATED_KEYS est ajouté à la requête afin de pouvoir récupérer l'id généré par la bdd (voir ci-dessous)
             // supprimer ce paramètre en cas de requête sans auto_increment.
             requeteSql=connection.prepareStatement("INSERT INTO athlete (nom, prenom, pays_id, date, sport_id)\n" +
-                    "VALUES (?,?)", requeteSql.RETURN_GENERATED_KEYS );
+                    "VALUES (?,?,?,?,?)", requeteSql.RETURN_GENERATED_KEYS );
             requeteSql.setString(1, ath.getNom());
-            requeteSql.setString(1, ath.getPrenom());
-            requeteSql.setInt(2, ath.getPays().getId());
-            requeteSql.setString(1, String.valueOf(ath.getDate()));
-            requeteSql.setInt(2, ath.getSport().getId());
+            requeteSql.setString(2, ath.getPrenom());
+            requeteSql.setInt(3, ath.getPays().getId());
+            requeteSql.setString(4, String.valueOf(ath.getDate()));
+            requeteSql.setInt(5, ath.getSport().getId());
 
            /* Exécution de la requête */
             requeteSql.executeUpdate();

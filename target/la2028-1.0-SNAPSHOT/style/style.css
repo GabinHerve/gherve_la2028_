@@ -1,9 +1,83 @@
 body {
     padding-top: 50px;
+    font-family: Arial, sans-serif;
+}
+.special {
+    padding-top:50px;
+}
+h1, h2 {
+    color: #154360;
+    margin-bottom: 20px;
+}
+img {
+    border: 1px solid #85c1e9;
+}
+a {
+    text-decoration: none;
+    color: #1a5276;
+}
+a:hover {
+    text-decoration: underline;
+    color: #2e86c1;
+}
+.form-inline label {
+    margin-right: 10px;
+}
+.form-inline input,
+.form-inline select {
+    margin-right: 20px;
 }
 
-.special {
-    padding-top: 50px;
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #0b3d59;
+    z-index: 1000;
+}
+.navbar .container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+.navbar-brand {
+    color: #fff;
+    text-decoration: none;
+    padding: 15px 12px;
+    font-size: 16px;
+    display: inline-block;
+}
+.navbar-brand:hover {
+    color: #a9d6e5;
+    background-color: #145374;
+    text-decoration: none;
+}
+
+table {
+    width: 100%;
+    margin-top: 15px;
+    border-collapse: collapse;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+}
+thead th {
+    background-color: #1b4f72;
+    color: #fff;
+    text-align: left;
+    padding: 12px 15px;
+}
+tbody td {
+    padding: 10px 15px;
+    border-bottom: 1px solid #d4e6f1;
+}
+tbody tr:nth-child(even) {
+    background-color: #eaf2f8;
+}
+tbody tr:hover {
+    background-color: #d4e6f1;
 }
 
 /* ===== Pages de formulaire ===== */

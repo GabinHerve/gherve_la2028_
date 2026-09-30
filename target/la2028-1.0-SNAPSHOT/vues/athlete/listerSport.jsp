@@ -60,5 +60,6 @@
       </tr>
       </tbody>
     </table>
+    <a href ='../ServletSport/ajouter'>Ajouter un sport</a>
 </body>
 </html>

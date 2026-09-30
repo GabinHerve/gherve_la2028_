@@ -75,6 +75,8 @@ public class FormAthlete {
             setErreur( "nom", e.getMessage() );
         }
         ath.setNom(nom);
+        ath.setPrenom(prenom);
+        ath.setDate(date);
 
         if ( erreurs.isEmpty() ) {
             resultat = "Succès de l'ajout.";
